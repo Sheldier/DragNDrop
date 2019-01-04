@@ -1,5 +1,5 @@
 const fill = document.querySelector('.fill');
-fill.style.backgroundImage = "url('../../unknown.png')";
+fill.style.backgroundImage = "url('img/vendor.png')";
 const empties = document.querySelectorAll('.empty');
 
 for(const empty of empties){
@@ -9,11 +9,15 @@ for(const empty of empties){
 	empty.addEventListener('drop', dragDrop);
 }
 
-function dragEnd (){
-	console.log(fill.style.backgroundImage);
-	fill.style.backgroundImage == 'url("../../unknown.png")' ? fill.style.backgroundImage = "url('../../bandicam 2019-01-04 13-00-30-588.jpg')" : fill.style.backgroundImage = "url('../../unknown.png')";
+function dragStart() {
+	this.parentElement.style.transform = null;
 }
 
+function dragEnd (){
+	fill.style.backgroundImage == 'url("img/vendor.png")' ? fill.style.backgroundImage = "url('img/abbay.png')" : fill.style.backgroundImage = "url('img/vendor.png')";
+}
+
+fill.addEventListener('dragstart', dragStart);
 fill.addEventListener('dragend', dragEnd);
 
 function dragOver(e) {
@@ -31,4 +35,5 @@ function dragLeave() {
 function dragDrop() {
 	this.className = 'empty';
 	this.append(fill);
+	this.style.transform = 'scale(0.65)';
 }
