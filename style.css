@@ -6,12 +6,12 @@ body{
 	background-color: #54815C;
 }
 .cont{
-	\display: -webkit-flex;
+	display: -webkit-flex;
 	display: -moz-flex;
 	display: -ms-flex;
 	display: -o-flex;
 	display: flex;
-	justify-content: space-between;	
+	justify-content: space-around;	
 	flex-wrap: wrap;
 }
 .fill{
@@ -40,4 +40,16 @@ body{
 }
 .invisible{
 	display: none;
+}
+button{
+	background-color: #86AA89;
+	border: none;
+	padding: 10px 20px;
+	display: block;
+	margin: 20px auto 0 auto;
+	width: 120px;
+	transition: 0.5s all ease;
+}
+button:focus{
+	outline: none;
 }
