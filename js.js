@@ -4,6 +4,7 @@ const empties = document.querySelectorAll('.empty');
 const button = document.querySelector('button');
 const spans = document.querySelectorAll('span');
 var targ;
+
 for(const empty of empties){
 	empty.addEventListener('dragover', dragOver);
 	empty.addEventListener('dragenter', dragEnter);
@@ -14,7 +15,7 @@ for(const empty of empties){
 
 function dragStartConts(e) {
 	targ = e.target;
-	this.style.transform = null;
+	empties.forEach((n) => n.style.transform = null);
 	return targ;
 }
 
